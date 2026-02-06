@@ -4,6 +4,6 @@
   "description": "Static website",
   "private": true,
   "scripts": {
-    "build": "node -e \"process.exit(0)\""
+    "build": "node build.js"
   }
 }

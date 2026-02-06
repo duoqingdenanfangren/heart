@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于我们 · 爱心小屋</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="preload" href="fonts/custom-font.woff2" as="font" type="font/woff2" crossorigin>
+</head>
+<body>
+  <header class="header header-small">
+    <div class="header-bg" style="background-image: url('images/background.jpg');"></div>
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="爱心 logo" class="logo-img" onerror="this.style.display='none'">
+        <span class="logo-text">爱心小屋</span>
+      </a>
+      <ul class="nav-list">
+        <li><a href="index.html" class="nav-link">首页</a></li>
+        <li><a href="about.html" class="nav-link active">关于</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="菜单" id="navToggle"></button>
+    </nav>
+    <section class="hero hero-small">
+      <h1 class="hero-title">关于我们</h1>
+      <p class="hero-desc">了解爱心小屋的故事与初心</p>
+    </section>
+  </header>
+
+  <main class="main">
+    <section class="section about-content">
+      <div class="about-card">
+        <h2>我们的初心</h2>
+        <p>爱心小屋诞生于对善意与温暖的向往。我们相信，小小的善意可以汇聚成河，让更多人感受到被爱与被关怀。</p>
+      </div>
+      <div class="about-card">
+        <h2>我们相信</h2>
+        <p>爱不分大小，每一份心意都值得被看见。用行动传递温暖，用真诚连接彼此，让世界因爱而更美好。</p>
+      </div>
+      <div class="heart-decoration" aria-hidden="true"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer-text"> Made with <span class="heart-icon" aria-label="爱心">♥</span> </p>
+  </footer>
+
+  <script src="js/utils.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

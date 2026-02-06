@@ -1,80 +1,54 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>爱心演示</title>
-
-<style>
-    body {
-        margin: 0;
-        background: black;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-
-    canvas {
-        display: block;
-    }
-
-    .text {
-        position: absolute;
-        top: 20px;
-        color: white;
-        font-size: 24px;
-        font-family: Arial;
-        opacity: 0.8;
-    }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱心小屋 · 首页</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="preload" href="fonts/custom-font.woff2" as="font" type="font/woff2" crossorigin>
 </head>
-
 <body>
-<div class="text">扫码看到的爱心 ❤️</div>
-<canvas id="c"></canvas>
+  <header class="header">
+    <div class="header-bg" style="background-image: url('images/background.jpg');"></div>
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="爱心 logo" class="logo-img" onerror="this.style.display='none'">
+        <span class="logo-text">爱心小屋</span>
+      </a>
+      <ul class="nav-list">
+        <li><a href="index.html" class="nav-link active">首页</a></li>
+        <li><a href="about.html" class="nav-link">关于</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="菜单" id="navToggle"></button>
+    </nav>
+    <section class="hero">
+      <div class="hearts-bg" aria-hidden="true"></div>
+      <h1 class="hero-title">用爱心温暖每一天</h1>
+      <p class="hero-desc">分享善意，传递温暖，让世界多一份美好</p>
+      <a href="about.html" class="btn btn-primary">了解更多</a>
+    </section>
+  </header>
 
-<script>
-const canvas = document.getElementById("c");
-const ctx = canvas.getContext("2d");
+  <main class="main">
+    <section class="section intro">
+      <h2 class="section-title">我们的心意</h2>
+      <p class="section-desc">每一颗爱心，都是对生活的热爱与对彼此的关怀。</p>
+      <div class="heart-grid" id="heartGrid"></div>
+    </section>
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+    <section class="section quote">
+      <blockquote class="quote-text">
+        “爱是恒久忍耐，又有恩慈；爱是不嫉妒，爱是不自夸……”
+      </blockquote>
+    </section>
+  </main>
 
-let t = 0;
+  <footer class="footer">
+    <p class="footer-text"> Made with <span class="heart-icon" aria-label="爱心">♥</span> </p>
+  </footer>
 
-function heart(a) {
-    const x = 16 * Math.pow(Math.sin(a), 3);
-    const y = 13 * Math.cos(a) - 5 * Math.cos(2*a) - 2 * Math.cos(3*a) - Math.cos(4*a);
-    return {x, y};
-}
-
-function draw() {
-    ctx.fillStyle = "rgba(0,0,0,0.2)";
-    ctx.fillRect(0,0,canvas.width,canvas.height);
-
-    ctx.fillStyle = "red";
-
-    for(let i=0;i<200;i++){
-        let a = Math.random() * Math.PI * 2;
-        let h = heart(a);
-
-        let scale = 15 + Math.sin(t)*2;
-
-        let x = canvas.width/2 + h.x * scale;
-        let y = canvas.height/2 - h.y * scale;
-
-        ctx.beginPath();
-        ctx.arc(x,y,2,0,Math.PI*2);
-        ctx.fill();
-    }
-
-    t += 0.05;
-    requestAnimationFrame(draw);
-}
-
-draw();
-</script>
+  <script src="js/utils.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
